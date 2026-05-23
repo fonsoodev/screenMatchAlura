@@ -1,4 +1,6 @@
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -55,5 +57,15 @@ public class Principal {
 
         System.out.println("Tempo de Maratona Filmes/Series: " + calculadora.getTempoTotal());
 
+        FiltroRecomendacao filtro1 = new FiltroRecomendacao();
+
+        filtro1.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacoes(300);
+
+        filtro1.filtra(episodio);
     }
 }
